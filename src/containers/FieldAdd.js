@@ -4,11 +4,15 @@ import RaisedButton from 'material-ui/RaisedButton';
 import MenuItem from 'material-ui/MenuItem';
 import TextField from 'material-ui/TextField';
 import SelectField from 'material-ui/SelectField';
-import Toggle from 'material-ui/Toggle';
 import DatePicker from 'material-ui/DatePicker';
 import {grey400} from 'material-ui/styles/colors';
 import Divider from 'material-ui/Divider';
 import PageBase from '../components/PageBase';
+
+import {Tabs, Tab} from 'material-ui/Tabs';
+
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
 
 const FieldAdd = () => {
 
@@ -38,12 +42,12 @@ const FieldAdd = () => {
 
         <TextField
           hintText="Name"
-          floatingLabelText="Name"
+          floatingLabelText="名字"
           fullWidth={true}
         />
 
         <SelectField
-          floatingLabelText="City"
+          floatingLabelText="城市"
           value=""
           fullWidth={true}>
           <MenuItem key={0} primaryText="London"/>
@@ -53,24 +57,44 @@ const FieldAdd = () => {
 
         <DatePicker
           hintText="Expiration Date"
-          floatingLabelText="Expiration Date"
+          floatingLabelText="选择时间"
           fullWidth={true}/>
-
-        <div style={styles.toggleDiv}>
-          <Toggle
-            label="Disabled"
-            labelStyle={styles.toggleLabel}
-          />
-        </div>
 
         <Divider/>
 
+        <Tabs>
+          <Tab label="传感器" >
+            <br/>
+            <div>
+              <FloatingActionButton mini={true}>
+                <ContentAdd />
+              </FloatingActionButton>
+            </div>
+          </Tab>
+          <Tab label="控制器" >
+            <div>
+              <h2 style={styles.headline}>Tab Two</h2>
+              <p>
+                This is another example tab.
+              </p>
+            </div>
+          </Tab>
+          <Tab label="监控器" >
+            <div>
+              <h2 style={styles.headline}>Tab Three</h2>
+              <p>
+                This is another example tab.
+              </p>
+            </div>
+          </Tab>
+        </Tabs>
+
         <div style={styles.buttons}>
           <Link to="/fields/">
-            <RaisedButton label="Cancel"/>
+            <RaisedButton label="返回"/>
           </Link>
 
-          <RaisedButton label="Save"
+          <RaisedButton label="保存"
                         style={styles.saveButton}
                         type="submit"
                         primary={true}/>

@@ -19,7 +19,7 @@ class Header extends React.Component {
         position: 'fixed',
         top: 0,
         overflow: 'hidden',
-        maxHeight: 57
+        maxHeight: 57,
       },
       menuButton: {
         marginLeft: 10
@@ -61,7 +61,7 @@ class Header extends React.Component {
                             targetOrigin={{horizontal: 'right', vertical: 'top'}}
                             anchorOrigin={{horizontal: 'right', vertical: 'top'}}
                   >
-                    <MenuItem primaryText="Sign out"/>
+                    <MenuItem primaryText="退出登录"/>
                   </IconMenu>
                 </div>
               }

@@ -13,7 +13,7 @@ export default (
     <Route path="login" component={LoginPage}/>
     <Route path="/" component={App}>
       <IndexRoute component={Dashboard}/>
-      <Route path="dashboard" component={Dashboard}/>
+      <Route path="index" component={Dashboard}/>
       <Route path="fields/">
         <IndexRoute component={Fields}/>
         <Route path="add" component={FieldAdd}/>

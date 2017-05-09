@@ -56,10 +56,10 @@ const Fields = () => {
           <TableHeader>
             <TableRow>
               <TableHeaderColumn style={styles.columns.id}>ID</TableHeaderColumn>
-              <TableHeaderColumn style={styles.columns.name}>Name</TableHeaderColumn>
+              <TableHeaderColumn style={styles.columns.name}>田名</TableHeaderColumn>
               <TableHeaderColumn style={styles.columns.price}>Price</TableHeaderColumn>
               <TableHeaderColumn style={styles.columns.category}>Category</TableHeaderColumn>
-              <TableHeaderColumn style={styles.columns.edit}>Edit</TableHeaderColumn>
+              <TableHeaderColumn style={styles.columns.edit}>修改</TableHeaderColumn>
             </TableRow>
           </TableHeader>
           <TableBody>
