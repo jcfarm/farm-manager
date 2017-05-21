@@ -12,8 +12,35 @@ import PageBase from '../components/PageBase';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
+import Chip from 'material-ui/Chip';
+import Avatar from 'material-ui/Avatar';
+
+function handleTouchTap() {
+  alert('You clicked the Chip.');
+}
 
 class FieldAdd extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    };
+  }
+
+  handleAdd() {
+    return(
+      <div>
+        <TextField
+          hintText="传感器名"
+        />
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <TextField
+          hintText="数量"
+        />
+      </div>
+    );
+  }
 
   render() {
 
@@ -33,7 +60,15 @@ class FieldAdd extends React.Component {
       },
       saveButton: {
         marginLeft: 5
-      }
+      },
+
+      chip: {
+        margin: 4,
+      },
+      wrapper: {
+        display: 'flex',
+        flexWrap: 'wrap',
+      },
     };
 
     return (
@@ -51,9 +86,9 @@ class FieldAdd extends React.Component {
             floatingLabelText="城市"
             value=""
             fullWidth={true}>
-            <MenuItem key={0} primaryText="London"/>
-            <MenuItem key={1} primaryText="Paris"/>
-            <MenuItem key={2} primaryText="Rome"/>
+            <MenuItem key={0} primaryText="北京"/>
+            <MenuItem key={1} primaryText="上海"/>
+            <MenuItem key={2} primaryText="广州"/>
           </SelectField>
 
           <DatePicker
@@ -66,13 +101,14 @@ class FieldAdd extends React.Component {
           <Tabs>
             <Tab label="传感器" >
               <br/>
-              <FloatingActionButton mini={true}>
+              <FloatingActionButton mini={true} onTouchTap={this.handleAdd()}>
                 <ContentAdd />
               </FloatingActionButton>
               <div>
                 <TextField
                   hintText="传感器名"
                 />
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 <TextField
                   hintText="数量"
                 />
@@ -80,17 +116,32 @@ class FieldAdd extends React.Component {
             </Tab>
             <Tab label="控制器" >
               <br/>
-              <FloatingActionButton mini={true}>
-                <ContentAdd />
-              </FloatingActionButton>
-              <div>
-                <TextField
-                  hintText="控制器名"
-                />
-                <TextField
-                  hintText="数量"
-                />
+              {/*<FloatingActionButton mini={true}>*/}
+                {/*<ContentAdd />*/}
+              {/*</FloatingActionButton>*/}
+              <div style={styles.wrapper}>
+                <Chip onTouchTap={handleTouchTap} style={styles.chip}>
+                  <Avatar size={32}>A</Avatar>
+                  A控制器
+                </Chip>
+                <Chip onTouchTap={handleTouchTap} style={styles.chip}>
+                  <Avatar size={32}>B</Avatar>
+                  B控制器
+                </Chip>
+                <Chip onTouchTap={handleTouchTap} style={styles.chip}>
+                  <Avatar size={32}>C</Avatar>
+                  C控制器
+                </Chip>
               </div>
+              {/*<div>*/}
+                {/*<TextField*/}
+                  {/*hintText="控制器名"*/}
+                {/*/>*/}
+                {/*&nbsp;&nbsp;&nbsp;&nbsp;*/}
+                {/*<TextField*/}
+                  {/*hintText="数量"*/}
+                {/*/>*/}
+              {/*</div>*/}
             </Tab>
             <Tab label="监控器" >
               <br/>
@@ -101,6 +152,7 @@ class FieldAdd extends React.Component {
                 <TextField
                   hintText="监控器名"
                 />
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 <TextField
                   hintText="数量"
                 />
